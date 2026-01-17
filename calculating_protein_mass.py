@@ -1,6 +1,6 @@
 protein_string = input()
 
-amino_acids_mass = {
+AMINO_ACIDS_MASS = {
     "A": 71.03711,
     "C": 103.00919,
     "D": 115.02694,
@@ -26,7 +26,7 @@ amino_acids_mass = {
 total_mass = 0
 
 for amino_acid in protein_string:
-    total_mass += amino_acids_mass[amino_acid]
+    total_mass += AMINO_ACIDS_MASS[amino_acid]
 
 print(total_mass)
 

@@ -1,6 +1,6 @@
 data = input()
 
-codon_table = {
+CODON_TABLE = {
     # U 
     "UUU": "F", "UUC": "F", "UUA": "L", "UUG": "L",
     "UCU": "S", "UCC": "S", "UCA": "S", "UCG": "S",
@@ -10,9 +10,8 @@ codon_table = {
     # C 
     "CUU": "L", "CUC": "L", "CUA": "L", "CUG": "L",
     "CCU": "P", "CCC": "P", "CCA": "P", "CCG": "P",
-    "CAC": "H", "CAT": "H", "CAA": "Q", "CAG": "Q",
+    "CAC": "H", "CAU": "H", "CAA": "Q", "CAG": "Q",
     "CGU": "R", "CGC": "R", "CGA": "R", "CGG": "R", 
-    "CAU": "H",
 
     # A
     "AUU": "I", "AUC": "I", "AUA": "I", "AUG": "M",
@@ -27,12 +26,12 @@ codon_table = {
     "GGU": "G", "GGC": "G", "GGA": "G", "GGG": "G"
 }
 
-def translate_rna_to_protein(data, codon_table):
+def translate_rna_to_protein(data, CODON_TABLE):
     protein = []
     pairs = len(data) // 3
     for i in range(pairs):
         codon = data[i*3 : i*3 + 3]
-        amino_acid = codon_table.get(codon, "?")
+        amino_acid = CODON_TABLE.get(codon, "?")
         if amino_acid == "?":
             print("Invalid codon: ", codon)
             continue
@@ -41,4 +40,4 @@ def translate_rna_to_protein(data, codon_table):
         protein.append(amino_acid)
     return "".join(protein)
 
-print(translate_rna_to_protein(data, codon_table))
+print(translate_rna_to_protein(data, CODON_TABLE))

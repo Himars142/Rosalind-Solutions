@@ -1,9 +1,9 @@
-filename = "rosalind_gc.txt"
+FILE_NAME = "rosalind_gc.txt"
 
 sequences = {}
 current_id = None
 
-with open(filename, 'r') as f:
+with open(FILE_NAME, 'r') as f:
     for line in f:
         line = line.strip()
 
